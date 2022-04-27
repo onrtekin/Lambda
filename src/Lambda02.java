@@ -16,6 +16,10 @@ public class Lambda02 {
         System.out.println("\n       ***");
         ciftElMax(sayi);
         System.out.println("\n       ***");
+        elemanTopla(sayi);
+        System.out.println("\n       ***");
+        ciftElCarp(sayi);
+
 
 
     }
@@ -59,11 +63,34 @@ public class Lambda02 {
 // Task : List'in cift elemanlarin karelerinin en buyugunu print ediniz
 
     public static void ciftElMax(List<Integer> sayi) {
-        System.out.print(sayi.
+        System.out.println(sayi.
                 stream().
                 filter(Lambda01::ciftBul).
                 map(t -> t * t).
                 reduce(Math::max));
+        System.out.println(sayi.
+                stream().
+                filter(Lambda01::ciftBul).
+                map(t -> t * t).
+                reduce(Integer::max));
     }
+    // Task : List'teki tum elemanlarin toplamini yazdiriniz.
+    //Lambda Expression...
+    public static void elemanTopla(List<Integer> sayi){
+        int toplam=sayi.stream().reduce(0,(a,b)->a+b);//Lambda Expression.....
+        System.out.print(toplam);
+        /*
+a ilk degerini her zaman atanan degerden (identity) alır
+b degerini her zamana  stream()'dan akısdan alır
+a ilk degerinden sonraki her değeri action(işlem)'dan alır
 
+       */
+    }
+    // Task : List'teki cift elemanlarin carpimini  yazdiriniz.
+
+    public static void ciftElCarp(List<Integer> sayi){
+        System.out.println(sayi.stream().filter(Lambda01::ciftBul).reduce(Math::multiplyExact));
+        System.out.println(sayi.stream().filter(Lambda01::ciftBul).reduce(1, (a, b) -> (a * b)));
+
+    }
 }
