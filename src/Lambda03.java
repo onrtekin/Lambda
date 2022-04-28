@@ -11,12 +11,6 @@ public class Lambda03 {
         tekKareBkPrint(sayi);
 
 
-
-
-
-
-        
-
     }
     //1. yontem Method Reference --> Integer class
     public static void minBul(List<Integer> sayi){
