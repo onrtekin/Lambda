@@ -61,7 +61,7 @@ fields --> Universite (String)
                 "universite='" + universite + '\'' +
                 ", bolum='" + bolum + '\'' +
                 ", ogrenciSayisi=" + ogrenciSayisi +
-                ", notOrt=" + notOrt +
+                ", notOrt=" + notOrt +"\n"+
                 '}';
     }
 }
