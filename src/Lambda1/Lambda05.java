@@ -24,8 +24,16 @@ public class Lambda05 {
         System.out.println(ogrSayisiEnAz2UniversitePrint(unv));
         System.out.println("*************");
         System.out.println(notOrt63BykUnvOgrSayToplami(unv));
-
-
+        System.out.println("*************");
+        System.out.println(notOrt63BykUnvOgrSayToplamiToInt(unv));
+        System.out.println("*************");
+        System.out.println(ogrenciSys130BykUnvNotOrtOrt(unv));
+        System.out.println("*************");
+        System.out.println(mathBolSayisiPrint(unv));
+        System.out.println("*************");
+        System.out.println(ogrSays571FazlaUnvEnBykNotOtr(unv));
+        System.out.println("*************");
+        System.out.println(ogrSay1071AzUnvEnKucNotOrt(unv));
     }
 
     //task 01--> notOrt'larinin 74' den buyuk oldg kontrol eden pr create ediniz.
@@ -85,10 +93,45 @@ public class Lambda05 {
                 //reduce(Math::addExact);
                 //reduce(0,(t,u)->t+u); bunlarda kullanilabilir
     }
+    public static int notOrt63BykUnvOgrSayToplamiToInt(List<Universite> unv){
+        return unv.
+                stream().
+                filter(t->t.getNotOrt()>63).
+                mapToInt(t->t.getOgrenciSayisi()).sum();
 
+    }
 
     //task 08--> Ogrenci sayisi 130'dan buyuk olan universite'lerin notOrt'larinin ortalamasini bulunuz.
+    public static OptionalDouble ogrenciSys130BykUnvNotOrtOrt(List<Universite> unv){
+        return unv.
+                stream().
+                filter(t->t.getOgrenciSayisi()>130).
+                mapToDouble(t->t.getNotOrt()).
+                average();
+
+    }
+
     //task 09-->"matematik" bolumlerinin sayisini  print ediniz.
-    //task 10-->Ogrenci sayilari 130'dan fazla olan universite'lerin en buyuk notOrt'unu bulunuz
-    //task 11-->Ogrenci sayilari 150'dan az olan universite'lerin en kucuk notOrt'unu bulunuz.
+
+    public static long mathBolSayisiPrint(List<Universite> unv){
+        return unv.stream().filter(t->t.getBolum().equalsIgnoreCase("matematik")).count();
+
+    }
+    //task 10-->Ogrenci sayilari 571'dan fazla olan universite'lerin en buyuk notOrt'unu bulunuz
+    public static OptionalInt ogrSays571FazlaUnvEnBykNotOtr(List<Universite> unv){
+        return  unv.
+                stream().
+                filter(t->t.getOgrenciSayisi()>571).
+                mapToInt(t->t.getNotOrt()).max();
+
+    }
+    //task 11-->Ogrenci sayilari 1071'dan az olan universite'lerin en kucuk notOrt'unu bulunuz.
+    public static OptionalInt ogrSay1071AzUnvEnKucNotOrt(List<Universite> unv){
+       return unv.
+               stream().
+               filter(t->t.getOgrenciSayisi()<1071).
+               mapToInt(t->t.getNotOrt()).
+               min();
+
+    }
 }
