@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Lambda05 {
@@ -21,6 +18,10 @@ public class Lambda05 {
         System.out.println(ogrenciSayilariniBykKckSirala(unv));
         System.out.println("*************");
         System.out.println(notortBykKckIlk3(unv));
+        System.out.println("*************");
+        System.out.println(ogrSayisiEnAz2UniversitePrint(unv));
+        System.out.println("*************");
+        System.out.println(notOrt63BykUnvOgrSayToplami(unv));
 
 
     }
@@ -60,10 +61,30 @@ public class Lambda05 {
              limit(3).
              collect(Collectors.toList());
     }
-
-
     //task 06--> ogrc sayisi en az olan 2. universite'yi  print ediniz.
+
+    public static List<Universite> ogrSayisiEnAz2UniversitePrint(List<Universite> unv){
+        return unv.
+                stream().
+                sorted(Comparator.comparing(Universite::getOgrenciSayisi)).
+                limit(2).
+                skip(1).
+                collect(Collectors.toList());
+
+    }
+
     //task 07--> notOrt 63 'den buyuk olan universite'lerin ogrc sayilarini toplamini print ediniz
+    public static Optional<Integer> notOrt63BykUnvOgrSayToplami(List<Universite> unv){
+        return unv.
+                stream().
+                filter(t->t.getNotOrt()>63).
+                map(t->t.getOgrenciSayisi()).
+                reduce(Integer::sum);
+                //reduce(Math::addExact);
+                //reduce(0,(t,u)->t+u); bunlarda kullanilabilir
+    }
+
+
     //task 08--> Ogrenci sayisi 130'dan buyuk olan universite'lerin notOrt'larinin ortalamasini bulunuz.
     //task 09-->"matematik" bolumlerinin sayisini  print ediniz.
     //task 10-->Ogrenci sayilari 130'dan fazla olan universite'lerin en buyuk notOrt'unu bulunuz
