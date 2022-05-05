@@ -8,9 +8,11 @@ import java.util.stream.Collectors;
 
 public class Lambda07 {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) throws IOException {
         //TASK 01 --> haluk.txt dosyasini okuyunuz.(Console'a yazdiriniz)
         System.out.println("\n*** haluk.txt dosyasini okuyunuz -->  ");
+        Files.lines(Paths.get("src/Lambda1/haluk.txt")).
+                forEach(System.out::println);
 
 
         //TASK 02 --> haluk.txt dosyasini buyuk harflerle okuyunuz.(Console'a buyuk harflerle yazdiriniz)
