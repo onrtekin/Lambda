@@ -17,6 +17,7 @@ public class Lambda07 {
 
         //TASK 02 --> haluk.txt dosyasini buyuk harflerle okuyunuz.(Console'a buyuk harflerle yazdiriniz)
         System.out.println("\n*** haluk.txt dosyasini buyuk harflerle okuyunuz -->  ");
+        Files.lines(Paths.get("src/Lambda1/haluk.txt")).map(String::toUpperCase).forEach(System.out::println);
 
 
         //TASK 03 --> haluk.txt dosyasindaki ilk satiri kucuk harflerle yazdiriniz.
