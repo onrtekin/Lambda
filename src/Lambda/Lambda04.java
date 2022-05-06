@@ -1,6 +1,4 @@
-package Lambda1;
-
-import Lambda1.Lambda01;
+package Lambda;
 
 import java.util.*;
 

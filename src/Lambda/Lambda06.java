@@ -1,7 +1,5 @@
-package Lambda1;
+package Lambda;
 
-import java.math.BigInteger;
-import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 
 public class Lambda06 {

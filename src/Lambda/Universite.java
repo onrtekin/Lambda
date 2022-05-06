@@ -1,4 +1,4 @@
-package Lambda1;
+package Lambda;
 
 public class Universite {
     /*
