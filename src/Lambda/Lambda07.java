@@ -13,10 +13,10 @@ public class Lambda07 {
     public static void main(String[] args) throws IOException {
         //TASK 01 --> haluk.txt dosyasini okuyunuz.(Console'a yazdiriniz)
         System.out.println("\n*** haluk.txt dosyasini okuyunuz -->  ");
-        Path haluk = Path.of("src/Lambda1/haluk.txt");
+        Path haluk = Path.of("src/Lambda/haluk.txt");
         Stream<String> akis = Files.lines(haluk);//haluk txt datalari akis stream e atandi
         //1. yol
-        Files.lines(Paths.get("src/Lambda1/haluk.txt")).
+        Files.lines(Paths.get("src/Lambda/haluk.txt")).
                 forEach(System.out::println);
         //2.yol
         akis.forEach(System.out::println);
@@ -24,20 +24,20 @@ public class Lambda07 {
 
         //TASK 02 --> haluk.txt dosyasini buyuk harflerle okuyunuz.(Console'a buyuk harflerle yazdiriniz)
         System.out.println("\n*** haluk.txt dosyasini buyuk harflerle okuyunuz -->  ");
-        Files.lines(Paths.get("src/Lambda1/haluk.txt")).map(String::toUpperCase).forEach(System.out::println);
+        Files.lines(Paths.get("src/Lambda/haluk.txt")).map(String::toUpperCase).forEach(System.out::println);
 
 
         //TASK 03 --> haluk.txt dosyasindaki ilk satiri kucuk harflerle yazdiriniz.
         System.out.println("\n*** haluk.txt dosyasindaki ilk satiri kucuk harflerle okuyunuz 01 -->  ");
         //1.yol
-        Files.lines(Paths.get("src/Lambda1/haluk.txt")).map(String::toLowerCase).limit(1).forEach(System.out::println);
+        Files.lines(Paths.get("src/Lambda/haluk.txt")).map(String::toLowerCase).limit(1).forEach(System.out::println);
         //2.yol
-        System.out.println(Files.lines(Paths.get("src/Lambda1/haluk.txt")).map(String::toLowerCase).findFirst());
+        System.out.println(Files.lines(Paths.get("src/Lambda/haluk.txt")).map(String::toLowerCase).findFirst());
 
 
         //TASK 04 --> haluk.txt dosyasinda "basari" kelimesinin kac satirda gectiginiz yazdiriniz
         System.out.println("\n*** haluk.txt dosyasinda basari kelimesinin kac satirda gectiginiz yazdiriniz -->  ");
-        System.out.println(Files.lines(Paths.get("src/Lambda1/haluk.txt")).map(String::toLowerCase).filter(t -> t.contains("basari")).count());
+        System.out.println(Files.lines(Paths.get("src/Lambda/haluk.txt")).map(String::toLowerCase).filter(t -> t.contains("basari")).count());
 
 
         //TASK 05 --> haluk.txt dosyasindaki farkli kelimeleri  yazdiriniz.

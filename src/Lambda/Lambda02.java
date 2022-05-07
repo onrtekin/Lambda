@@ -54,7 +54,11 @@ public class Lambda02 {
     // Task : Functional Programming ile listin cift elemanlarinin
     // karekoklerini ayni satirda aralarina bosluk birakarak yazdiriniz
     public static void ciftKareKokPrint(List<Integer> sayi) {
-        sayi.stream().filter(Lambda01::ciftBul).map(Math::sqrt).forEach(t -> System.out.print(t + " "));
+        sayi.
+                stream().
+                filter(Lambda01::ciftBul).
+                map(Math::sqrt).
+                forEach(t -> System.out.print(t + " "));
     }
     // Task : list'in en buyuk elemanini yazdiriniz
 
@@ -79,7 +83,9 @@ public class Lambda02 {
     // Task : List'teki tum elemanlarin toplamini yazdiriniz.
     //Lambda Expression...
     public static void elemanTopla(List<Integer> sayi){
-        int toplam=sayi.stream().reduce(0,(a,b)->a+b);//Lambda Expression.....
+        int toplam=sayi.
+                stream().
+                reduce(0,(a,b)->a+b);//Lambda Expression.....
         System.out.print(toplam);
         /*
 a ilk degerini her zaman atanan degerden (identity) alır
@@ -91,8 +97,14 @@ a ilk degerinden sonraki her değeri action(işlem)'dan alır
     // Task : List'teki cift elemanlarin carpimini  yazdiriniz.
 
     public static void ciftElCarp(List<Integer> sayi){
-        System.out.println(sayi.stream().filter(Lambda01::ciftBul).reduce(Math::multiplyExact));
-        System.out.println(sayi.stream().filter(Lambda01::ciftBul).reduce(1, (a, b) -> (a * b)));
+        System.out.println(sayi.
+                stream().
+                filter(Lambda01::ciftBul).
+                reduce(Math::multiplyExact));
+        System.out.println(sayi.
+                stream().
+                filter(Lambda01::ciftBul).
+                reduce(1, (a, b) -> (a * b)));
 
     }
 }

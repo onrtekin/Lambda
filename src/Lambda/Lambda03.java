@@ -35,7 +35,10 @@ public class Lambda03 {
     }
     // Task : List'teki 5'ten buyuk en kucuk tek sayiyi print ediniz.
     public static void bestenBuyukTekEnKucuk(List<Integer> sayi){
-        System.out.println(sayi.stream().filter(t->t>5&&t%2==1).reduce(Lambda03::byHalukMin));
+        System.out.println(sayi.
+                stream().
+                filter(t->t>5&&t%2==1).
+                reduce(Lambda03::byHalukMin));
     }
     // Task : list'in cift  elemanlarinin karelerini  kucukten buyuge print ediniz.
     public static void ciftKareKbPrinr(List<Integer> sayi){
