@@ -36,6 +36,12 @@ public class C1_IntList_StreamOrnekleri {
         System.out.println(hepsiSifirdanKucukMu(list));
         System.out.println();
         System.out.println(yuzeEsitElYokMu(list));
+        System.out.println();
+        System.out.println(sifiraEsitElYokMu(list));
+        System.out.println();
+        ilkBesEltopla(list);
+        System.out.println();
+        sonBesEllistele(list);
     }
     // S1:listi aralarinda bosluk birakarak yazdiriniz //
     public static void hepsiniYaz(List<Integer> list){
@@ -156,14 +162,26 @@ public class C1_IntList_StreamOrnekleri {
 
 
     // S15: listenin sifira esit elemani yok mu?
+    public static boolean sifiraEsitElYokMu(List<Integer> list){
+        return list.stream().noneMatch(t->t==0);
+    }
 
 
 
     // S16:  listenin ilk 5 elemanini topla?
+    public static void ilkBesEltopla(List<Integer> list){
+        System.out.println(list.stream().limit(5).reduce(0,(x, y) -> x + y));
+
+    }
 
 
 
     //S17: listenin son bes elemaninin  listele
+    public static void sonBesEllistele(List<Integer> list){
+        System.out.println(list.stream().skip(list.size()-5).collect(Collectors.toList()));
+    }
+
+
 
 
 }
