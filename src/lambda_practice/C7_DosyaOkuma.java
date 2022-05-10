@@ -32,26 +32,32 @@ public class C7_DosyaOkuma {
 
 
     // S1: Yazdiralim
+        //satir.forEach(t-> System.out.println(t));
 
 
     //S2: tum harflari buyuk harf ile yazdiralim
+       // satir.map(String::toUpperCase).forEach(t-> System.out.println(t));
 
 
     // S3: son satiri buyuk harfle yazdiralim
+        //satir.skip(4).map(String::toUpperCase).forEach(t-> System.out.println(t));
 
 
     //S4: 2.ve 3. satirlari yazdiralim
+       // satir.skip(1).limit(2).forEach(t-> System.out.println(t));
 
 
     //S5: kac tane "icin" kelimesi vardir
+        //System.out.println(satir.filter(t->t.contains("icin")).count());
+
 
 
     //S6: tum kelimelerin tum kelimeleri natural order  yazdiriniz.
-
+       // satir.map(t->t.split(" ")).flatMap(Arrays::stream).sorted().forEach(t-> System.out.println(t));
 
     // S7:  metinde kac tane "a"  vardir
 
-
+        System.out.println(satir.map(t -> t.split("")).flatMap(Arrays::stream).filter(t -> t.contains("a")).count());
     }
 
 }
